@@ -70,6 +70,9 @@ $ python manage.py shell
 >> product.save()
 ## delete
 >> Product.objects.filter(name__startswith="P").delete()
+
+## Depois de adicionar o manager customizado:
+>> Product.unavailable.all()
 ```
 ## FAQ
 ### CharField vs TextField

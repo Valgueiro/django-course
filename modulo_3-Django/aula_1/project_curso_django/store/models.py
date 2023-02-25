@@ -1,5 +1,9 @@
 from django.db import models
 
+class UnavailableManager(models.Manager):
+    def get_queryset(self):
+        return super(UnavailableManager, self).get_queryset().filter(available=False)
+
 class Product(models.Model):
     name = models.CharField(max_length=250)
     description = models.TextField(blank=True)
@@ -10,5 +14,8 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    objects = models.Manager() # default
+    unavailable = UnavailableManager() # nosso manager
     def __str__(self):
         return f"{self.name} -> R$ {self.price}"
+
