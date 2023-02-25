@@ -1,3 +1,5 @@
+## Comandos iniciais
+
 ```bash
 # Configurando o PYENV após instalaçao
 $ pyenv virtualenv 3.10 curso-django
@@ -19,3 +21,19 @@ $ python manage.py migrate
 # cria primeiro app
 $ python manage.py startapp store
 ```
+
+## Adicionando um model
+```bash
+# Cria as migraçoes
+$ python manage.py makemigrations store
+
+# Verificar o comando sql que foi gerado
+$ python manage.py sqlmigrate store 0001
+
+# Roda a migration
+$ python manage.py migrate
+```
+## FAQ
+### CharField vs TextField
+A mesma coisa que varchar vs text. No caso do CharField vc precisa passar o limite maximo de tamanho, enquanto o TextField nao precisa
+
