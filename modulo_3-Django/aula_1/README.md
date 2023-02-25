@@ -33,6 +33,19 @@ $ python manage.py sqlmigrate store 0001
 # Roda a migration
 $ python manage.py migrate
 ```
+
+## Setup Admin
+```bash
+# Cria um superuser
+$ python manage.py createsuperuser
+
+# Verificar o comando sql que foi gerado
+$ python manage.py sqlmigrate store 0001
+
+# Roda a migration
+$ python manage.py migrate
+```
+
 ## FAQ
 ### CharField vs TextField
 A mesma coisa que varchar vs text. No caso do CharField vc precisa passar o limite maximo de tamanho, enquanto o TextField nao precisa
